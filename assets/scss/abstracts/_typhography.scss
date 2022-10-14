@@ -1,0 +1,92 @@
+@mixin p1-semibold {
+	font-weight: $fw-medium;
+	font-size: $fs-p-1;
+	line-height: 36;
+	letter-spacing: 0%;
+	@content;
+}
+
+@mixin p1-bold {
+	font-weight: $fw-reguler;
+	font-size: $fs-p-1;
+	line-height: 34;
+	letter-spacing: 0%;
+	@content;
+}
+
+@mixin p2-bold {
+	font-weight: $fw-bold;
+	font-size: $fs-p-2;
+	line-height: auto;
+	letter-spacing: -2%;
+	@content;
+}
+
+@mixin p2-reguler {
+	font-weight: $fw-reguler;
+	font-size: $fs-p-2;
+	line-height: 30;
+	letter-spacing: -2%;
+	@content;
+}
+
+@mixin p2-medium {
+	font-weight: $fw-medium;
+	font-size: $fs-p-2;
+	line-height: 23;
+	letter-spacing: -2%;
+	@content;
+}
+
+@mixin p3-medium {
+	font-weight: $fw-medium;
+	font-size: $fs-p-3;
+	line-height: auto;
+	letter-spacing: -2%;
+	@content;
+}
+
+@mixin p3-reguler {
+	font-weight: $fw-reguler;
+	font-size: $fs-p-3;
+	line-height: 20;
+	letter-spacing: -2%;
+	@content;
+}
+
+// -- HEADER
+@mixin h1 {
+	font-weight: $fw-bold;
+	font-size: $fs-h-1;
+	line-height: auto;
+	letter-spacing: -2%;
+	@content;
+}
+@mixin h2 {
+	font-weight: $fw-bold;
+	font-size: $fs-h-2;
+	line-height: auto;
+	letter-spacing: -2%;
+	@content;
+}
+@mixin h3 {
+	font-weight: $fw-bold;
+	font-size: $fs-h-3;
+	line-height: auto;
+	letter-spacing: -2%;
+	@content;
+}
+@mixin h4 {
+	font-weight: $fw-bold;
+	font-size: $fs-h-4;
+	line-height: auto;
+	letter-spacing: -2%;
+	@content;
+}
+@mixin h5 {
+	font-weight: $fw-bold;
+	font-size: $fs-h-5;
+	line-height: 36;
+	letter-spacing: -2%;
+	@content;
+}
