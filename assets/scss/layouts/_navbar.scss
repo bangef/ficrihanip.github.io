@@ -1,0 +1,129 @@
+@use "../abstracts/mixins" as mix;
+@import "../base/variable";
+
+header {
+	position: sticky;
+	top: 0;
+	transition: all ease-in-out 0.3s;
+	background-color: $color-dark;
+	.container {
+		@include mix.flex {
+			max-width: 704px;
+			width: 100%;
+			margin: 0 auto;
+			padding: 1rem;
+		}
+		// border: 1px solid red;
+		position: relative;
+		z-index: 999;
+	}
+
+	.navbar {
+		@include mix.flex {
+			width: 530px;
+			max-width: 100%;
+		}
+		&-menu {
+			@include mix.flex(space-between, flex-start) {
+				width: 416px;
+				max-width: 100%;
+				.active > a {
+					padding-bottom: 0.5rem;
+					border-bottom: 2px solid white;
+					font-weight: 700;
+				}
+				&--list {
+					@media screen and (max-width: 768px) {
+						display: inline-block;
+						margin-top: 3rem;
+					}
+					& > a {
+						color: $color-light;
+						&:hover {
+							padding-bottom: 0.5rem;
+							border-bottom: 2px solid white;
+							font-weight: 700;
+						}
+						// border: 1px solid blue;
+					}
+				}
+			}
+			@media screen and (max-width: 768px) {
+				display: flex;
+				flex-direction: column;
+			}
+		}
+
+		@media screen and (max-width: 768px) {
+			display: flex;
+			align-items: flex-start;
+			flex-direction: column;
+			position: absolute;
+			width: 75%;
+			top: -450px;
+			right: 0;
+			background-color: $color-dark;
+			padding: 1rem;
+			transition: all ease 0.3s;
+			z-index: -1;
+		}
+	}
+
+	.btn {
+		cursor: pointer;
+		& > img {
+			width: 100%;
+			&:active,
+			&:focus {
+				transform: scale(80%);
+			}
+		}
+		@media screen and (max-width: 768px) {
+			display: flex;
+			margin-top: 3rem;
+		}
+
+		&-hamburgerbar {
+			width: 2rem;
+			height: 24px;
+			display: none;
+			cursor: pointer;
+
+			@media screen and (max-width: 768px) {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: flex-end;
+			}
+			&--list {
+				transition: all ease-in 0.3s;
+				width: 100%;
+				height: 3px;
+				background-color: $color-light;
+				&:nth-child(2) {
+					width: 75%;
+				}
+				&:nth-child(3) {
+					width: 50%;
+				}
+			}
+		}
+	}
+}
+
+.show > .btn-hamburgerbar--list {
+	&:nth-child(1) {
+		transform: rotate(45deg);
+		transform-origin: 7px;
+	}
+	&:nth-child(2) {
+		width: 100%;
+		transform: translateX(-50px);
+		opacity: 0;
+	}
+	&:nth-child(3) {
+		transform: rotate(-45deg);
+		transform-origin: -1px;
+		width: 100%;
+	}
+}
